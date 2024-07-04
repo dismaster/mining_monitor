@@ -31,7 +31,7 @@ do
     ## empty password
     if [ -z "$password" ]
     then
-    printf "\nEmpty!" >&2
+      >&2
     else 
       if [ "$password" = "$verify" ]      ## check for match
       then
