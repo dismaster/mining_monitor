@@ -1,5 +1,5 @@
 #!/bin/bash
-#rig_pw="test123"
+rig_pw="test123"
 
 hw_model=$(getprop ro.product.model)
 hw_brand=$(getprop ro.product.brand)
