@@ -34,7 +34,7 @@ do
     fi
 
     ## empty password
-    if [ -z "$var" ]
+    if [ -z "$password" ]
     then
     >&2
     fi
