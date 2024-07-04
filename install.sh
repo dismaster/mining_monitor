@@ -24,12 +24,18 @@ yes | pkg upgrade > /dev/null 2>&1
 yes | pkg install netcat-openbsd jq termux-api iproute2 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
-echo -e "${R}-> ${LP} Enter Rig-Password: ${NC}"
-while read -s password; do
- if [ "$password" == "" ]; then
-        break
- else
-        echo "No PW given!"
-        continue
- fi
+echo -e ""
+while :     ## loop continually
+do
+    read -p "${R}-> ${LP} Enter Rig-Password: ${NC}" password
+    read -p "${R}-> ${LP} Re-Enter Rig-Password: ${NC}" verify
+    
+    if [ "$password" = "$verify" ]      ## check for match
+    then
+        printf "\nPassword Successful!!\n"
+        break;
+    fi
+    
+    ## otherwise loop again
+    printf "\nerror: Password does not match. Please try again.\n\n" >&2
 done
