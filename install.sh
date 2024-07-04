@@ -28,17 +28,17 @@ do
     read -p "Enter Rig-Password    : " password
     read -p "Re-Enter Rig-Password : " verify
     
-    if [ "$password" = "$verify" ]      ## check for match
-    then
-        break;
-    fi
-
     ## empty password
     if [ -z "$password" ]
     then
-    >&2
+    printf "\nEmpty!" >&2
+    else 
+      if [ "$password" = "$verify" ]      ## check for match
+      then
+          break;
+      fi
     fi
-    
+  
     ## otherwise loop again
     printf "\nerror: Password does not match. Please try again.\n\n" >&2
 done
