@@ -47,7 +47,7 @@ echo -e "${R}-> ${NC}Password: ${LG}MATCH${NC}"
 
 wget https://raw.githubusercontent.com/dismaster/mining_monitor/main/monitor.sh > /dev/null 2>&1
 chmod 777 monitor.sh > /dev/null 2>&1
-#(crontab -l 2>/dev/null; echo "*/1 * * * * ~/monitor.sh") | crontab - > /dev/null 2>&1
+(crontab -l 2>/dev/null; echo "*/1 * * * * ~/monitor.sh") | crontab - > /dev/null 2>&1
 sed -i -e "s/test123/$password/g" monitor.sh
 
 echo -e "${R}-> ${NC}Monitor Script: ${LG}COMPLETE${NC}"
