@@ -19,8 +19,9 @@ echo -e "${LC}#############################################${NC}"
 
 echo -e "\n"
 
-#yes | pkg update > /dev/null 2>&1
-#yes | pkg upgrade > /dev/null 2>&1
+yes | pkg update > /dev/null 2>&1
+yes | pkg upgrade > /dev/null 2>&1
+yes | pkg install cronie termux-services libjansson screen openssh netcat-openbsd jq termux-api iproute2 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 while :     ## loop continually
@@ -42,4 +43,10 @@ do
     ## otherwise loop again
     printf "\nerror: Password does not match. Please try again.\n\n" >&2
 done
-echo -e "${R}-> ${NC}Password: ${LG}GOOD${NC}"
+echo -e "${R}-> ${NC}Password: ${LG}MATCH${NC}"
+
+wget https://raw.githubusercontent.com/dismaster/mining_monitor/main/monitor.sh && chmod 777 monitor.sh > /dev/null 2>&1
+#(crontab -l 2>/dev/null; echo "*/1 * * * * ~/monitor.sh") | crontab - > /dev/null 2>&1
+sed -i -e "s/test123/$password/g" monitor.sh
+
+echo -e "${R}-> ${NC}Monitor Script: ${LG}COMPLETE${NC}"
