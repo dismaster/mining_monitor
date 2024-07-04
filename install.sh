@@ -30,7 +30,7 @@ do
     echo -e "${R}-> ${LP} Re-Enter Rig-Password: ${NC}"
     read -p verify
     
-    if [ "$password" = "$verify" ]      ## check for match
+    if [ "$password" == "$verify" ]      ## check for match
     then
         printf "\nPassword Successful!!\n"
         break;
