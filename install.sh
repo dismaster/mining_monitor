@@ -32,6 +32,12 @@ do
     then
         break;
     fi
+
+    ## empty password
+    if [ -z "$var" ]
+    then
+    >&2
+    fi
     
     ## otherwise loop again
     printf "\nerror: Password does not match. Please try again.\n\n" >&2
