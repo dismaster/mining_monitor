@@ -39,3 +39,4 @@ do
     printf "\nerror: Password does not match. Please try again.\n\n" >&2
 done
 echo -e "${R}-> ${NC}Password: ${LG}GOOD${NC}"
+
