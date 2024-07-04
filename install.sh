@@ -25,12 +25,11 @@ echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 while :     ## loop continually
 do
-    echo -e "${R}-> ${LP} Enter Rig-Password: ${NC}"
-    read -p password
-    echo -e "${R}-> ${LP} Re-Enter Rig-Password: ${NC}"
-    read -p verify
+    read -p "Input username    : " user
+    read -p "Input password    : " password
+    read -p "Re-enter password : " verify
     
-    if [ "$password" == "$verify" ]      ## check for match
+    if [ "$password" = "$verify" ]      ## check for match
     then
         printf "\nPassword Successful!!\n"
         break;
