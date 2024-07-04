@@ -26,7 +26,7 @@ echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 echo -e "${R}-> ${LP} Enter Rig-Password: ${NC}"
 while read -s password; do
- if [ "$release" == "" ]; then
+ if [ "$password" == "" ]; then
         break
  else
         echo "No PW given!"
