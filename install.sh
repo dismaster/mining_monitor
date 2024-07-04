@@ -19,9 +19,8 @@ echo -e "${LC}#############################################${NC}"
 
 echo -e "\n"
 
-yes | pkg update > /dev/null 2>&1
-yes | pkg upgrade > /dev/null 2>&1
-yes | pkg install netcat-openbsd jq termux-api iproute2 > /dev/null 2>&1
+#yes | pkg update > /dev/null 2>&1
+#yes | pkg upgrade > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 while :     ## loop continually
