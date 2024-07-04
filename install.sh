@@ -24,7 +24,6 @@ yes | pkg upgrade > /dev/null 2>&1
 yes | pkg install netcat-openbsd jq termux-api iproute2 > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
-echo -e ""
 while :     ## loop continually
 do
     read -p "${R}-> ${LP} Enter Rig-Password: ${NC}" password
