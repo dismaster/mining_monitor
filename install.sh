@@ -25,8 +25,8 @@ echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 while :     ## loop continually
 do
-    read -s -p "${R}-> ${NC}Enter Rig-Password${NC}    : " password
-    read -s -p "${R}-> ${NC}Re-Enter Rig-Password${NC} : " verify
+    read -p "Enter Rig-Password    : " password
+    read -p "Re-Enter Rig-Password : " verify
     
     if [ "$password" = "$verify" ]      ## check for match
     then
@@ -37,4 +37,3 @@ do
     printf "\nerror: Password does not match. Please try again.\n\n" >&2
 done
 echo -e "${R}-> ${NC}Password: ${LG}GOOD${NC}"
-
