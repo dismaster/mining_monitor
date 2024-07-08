@@ -21,7 +21,7 @@ echo -e "\n"
 
 yes | pkg update > /dev/null 2>&1
 yes | pkg upgrade > /dev/null 2>&1
-yes | pkg install cronie termux-services libjansson screen openssh netcat-openbsd jq termux-api iproute2 > /dev/null 2>&1
+yes | pkg install cronie termux-services libjansson screen openssh netcat-openbsd jq termux-api iproute2 tsu > /dev/null 2>&1
 echo -e "${R}-> ${NC}Software Update/Packages: ${LG}COMPLETE${NC}"
 
 while :     ## loop continually
@@ -46,7 +46,9 @@ done
 echo -e "${R}-> ${NC}Password: ${LG}MATCH${NC}"
 
 wget https://raw.githubusercontent.com/dismaster/mining_monitor/main/monitor.sh > /dev/null 2>&1
+wget https://raw.githubusercontent.com/dismaster/mining_monitor/main/vcgencmd > /dev/null 2>&1
 chmod 777 monitor.sh > /dev/null 2>&1
+chmod 777 vcgencmd > /dev/null 2>&1
 (crontab -l 2>/dev/null; echo "*/1 * * * * ~/monitor.sh") | crontab - > /dev/null 2>&1
 sed -i -e "s/test123/$password/g" monitor.sh
 
