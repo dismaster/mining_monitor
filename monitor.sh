@@ -1,7 +1,7 @@
 #!/bin/bash
 rig_pw="test123"
 
-x=`ping -c1 api.rg3d.eu 2>&1 | grep unknown`
+x=`ping -c1 api.rg3d.eu 2>&1 | grep received`
 
 if [ ! "$x" != "" ]; then
 
